@@ -1,0 +1,30 @@
+{% extends "agregar.html" %}
+{% load static %}
+
+{% block content %}
+    <table  class=" table table-bordered table-hover" >
+      <thead class="thead-dark">
+        <tr>
+            <th class="text-center"><font color="red">Nombre</font></th>
+            <th class="text-center"><font color="red">Descripcion</font></th>
+            <th class="text-center"><font color="red">Cantidad</font></th>
+            <th class="text-center"><font color="red">Opciones</font></th>
+        </tr>
+       </thead>
+
+        {% for p in bodega %}
+
+        <tr>
+            <td class="text-center"><font color="red">{{ p.nombre }}</font></td>
+            <td class="text-justify"><font face="Comic Sans MS,Arial,Verdana">{{ p.descripcion }}</font></td>
+            <td class="text-center"><font face="Comic Sans MS,Arial,Verdana">{{ p.cantidad }}</font></td>
+            <td class="text-center"><a class="nav-link" href="{% url 'modificarmaterial' p.id %}"><u><font color="blue">Modificar</font></u></a></td>
+            <td class="text-center"><a class="nav-link" href="{% url 'eliminarma' p.id %}"><u><font color="blue">Eliminar</font></u></a></td>
+
+
+        </tr>
+
+         {% endfor %}
+    </table>
+
+  {% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Mecanicos {% endblock title %}
+
+{% block background %}{% load static %}{% static 'img/acerca-bg.jpg' %}{% endblock %}
+
+{% block headers %}  <h1><font face="Comic Sans MS,Arial,Verdana">Mecanicos</font></h1>
+    <span class="subheading"> <font face="Comic Sans MS,Arial,Verdana">F</font> </span> {% endblock %}
+{% block content %}
+    <a class="nav-link" href="{% url 'agregarmecanico' %}"><mark><font face="Comic Sans MS,Arial,Verdana">Crear Mecanico</font></mark></a>
+    <a class="nav-link" href="{% url 'lista' %}"><mark><font face="Comic Sans MS,Arial,Verdana">Lista de Mecanicos</font></mark></a>
+{% endblock %}

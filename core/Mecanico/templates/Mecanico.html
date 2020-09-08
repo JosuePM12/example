@@ -1,0 +1,32 @@
+{% extends "agregarmecanico.html" %}
+{% load static %}
+
+{% block content %}
+    <table  class="table table-bordered table-hover">
+      <thead class="thead-dark">
+        <tr>
+            <th class="text-center"><font color="red">Apellido</font></th>
+            <th class="text-center"><font color="red">Nombre</font></th>
+            <th class="text-center"><font color="red">Edad</font></th>
+            <th class="text-center"><font color="red">Edad</font></th>
+            <th class="text-center"><font color="red">Cedula</font></th>
+            <th class="text-center"><font color="red">Sexo</font></th>
+            <th class="text-center"><font color="red">Opciones</font></th>
+        </tr>
+      </thead>
+        {% for p in mecanico %}
+
+        <tr>
+            <td class="text-center"><font face="Comic Sans MS,Arial,Verdana">{{ p.apellido }}</font></td>
+            <td class="text-center"><font face="Comic Sans MS,Arial,Verdana">{{ p.nombre }}</font></td>
+            <td class="text-center"><font face="Comic Sans MS,Arial,Verdana">{{ p.edad }}</font></td>
+            <td class="text-center"><font face="Comic Sans MS,Arial,Verdana">{{ p.email }}</font></td>
+            <td class="text-center"><font face="Comic Sans MS,Arial,Verdana">{{ p.cedula }}</font></td>
+            <td class="text-center"><font face="Comic Sans MS,Arial,Verdana">{{ p.sexo }}</font></td>
+            <td class="text-center"><a class="nav-link" href="{% url 'modificarmecanico' p.id %}"><u><font color="blue">Modificar</font></u></a></td>
+        </tr>
+
+         {% endfor %}
+    </table>
+
+  {% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Bodega {% endblock title %}
+
+{% block background %}{% load static %}{% static 'img/bodegita.jpg' %}{% endblock %}
+
+{% block headers %}  <h1><font face="Comic Sans MS,Arial,Verdana">Bodega</font></h1>
+    <span class="subheading"> <font face="Comic Sans MS,Arial,Verdana">Tulio Bohorquez</font> </span> {% endblock %}
+{% block content %}
+    <a class="nav-link" href="{% url 'agregarma' %}"><mark><font face="Comic Sans MS,Arial,Verdana">Agregar Repuesto</font></mark></a>
+    <a class="nav-link" href="{% url 'Tabla' %}"><mark><font face="Comic Sans MS,Arial,Verdana">Lista de Repuestos</font></mark></a>
+{% endblock %}
